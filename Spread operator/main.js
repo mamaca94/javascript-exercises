@@ -51,6 +51,17 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = "Ristorante Roma";
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.startMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 // iterables: arrays, strings, maps, sets. NOT objects
 
 // const map1 = new Map();
