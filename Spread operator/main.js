@@ -22,7 +22,11 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     return `Here's your delicious pasta with ${ing1}, ${ing2}, ${ing3}`;
   },
+
+  orderPizza: function () {},
 };
+
+// ****** DESTRUCTURING ****** \\
 
 const arr = [6, 7, 8];
 const newArr = [1, 2, ...arr];
@@ -62,13 +66,20 @@ console.log(pizza, risotto, otherFood);
 // Objects
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
-// iterables: arrays, strings, maps, sets. NOT objects
 
-// const map1 = new Map();
-// map1.set("a", 1);
-// map1.set("b", 2);
-// map1.set("c", 3);
+// ****** Functions ****** \\
 
-// console.log(map1);
-// map1.set("a", 97);
-// console.log(map1.get("a"));
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 4);
+add(23, 11, 5, 7);
+add(22, 33, 44, 55, 1, 2, 3, 4);
+
+const x = [23, 5, 7];
+add(...x);
